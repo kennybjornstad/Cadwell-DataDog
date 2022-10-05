@@ -1,0 +1,11 @@
+init_config:
+  service: CadwellEventLogs
+instances:
+  -
+    path: "Cadwell"
+    start: oldest
+    legacy_mode: false
+logs:
+  - type: windows_event
+    channel_path: "Cadwell"
+    source: "Cadwell"

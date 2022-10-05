@@ -1,0 +1,11 @@
+init_config:
+
+instances:
+  - name: CadLinkServerWindowsService
+    search_string:
+      - CadLinkServerWindowsService.exe
+    service: CadLinkServerWindowsService
+#  - name: CadLinkClientWindowsService
+#    search_string:
+#      - CadLinkClientWindowsService.exe
+#    service: CadLinkClientWindowsService

@@ -1,0 +1,38 @@
+init_config:
+  service: CadwellPerfCounters
+instances:
+  - class: Win32_PerfFormattedData_ServiceModel4000_ServiceModelService4000
+    metrics:
+      - [Name, perf.name, gauge] #This is needed so that the tag_by values are applied.
+      - [Calls, perf.calls, gauge]
+      - [CallsDuration, perf.calls_duration, gauge]
+      - [CallsFailed, perf.calls_failed, gauge]
+      - [CallsFailedPerSecond, perf.calls_failed_persec, gauge]
+      - [CallsFaulted, perf.calls_faulted, gauge]
+      - [CallsFaultedPerSecond, perf.calls_faulted_persec, gauge]
+      - [CallsOutstanding, perf.calls_outstanding, gauge]
+      - [CallsPerSecond, perf.calls_persec, gauge]
+      - [Instances, perf.instance, gauge]
+      - [InstancesCreatedPerSecond, perf.instances_create_persec, gauge]
+      - [PercentOfMaxConcurrentCalls, perf.percent_of_max_concurrent_calls, gauge]
+      - [PercentOfMaxConcurrentInstances, perf.percent_of_max_concurrent_instances, gauge]
+      - [PercentOfMaxConcurrentSessions, perf.percent_of_max_concurrent_sessions, gauge]
+    tag_by: Name
+
+  - class: Win32_PerfFormattedData_ServiceModel4000_ServiceModelOperation4000 
+    metrics:
+      - [Name, perf.name, gauge] #This is needed so that the tag_by values are applied
+      - [Calls, perf.calls, gauge]
+      - [CallsDuration, perf.calls_duration, gauge]
+      - [CallsFailed, perf.calls_failed, gauge]
+      - [CallsFailedPerSecond, perf.calls_failed_persec, gauge]
+      - [CallsFaulted, perf.calls_faulted, gauge]
+      - [CallsFaultedPerSecond, perf.calls_faulted_persec, gauge]
+      - [CallsOutstanding, perf.calls_outstanding, gauge]
+      - [CallsPerSecond, perf.calls_persec, gauge]
+      - [Instances, perf.instance, gauge]
+      - [InstancesCreatedPerSecond, perf.instances_create_persec, gauge]
+      - [PercentOfMaxConcurrentCalls, perf.percent_of_max_concurrent_calls, gauge]
+      - [PercentOfMaxConcurrentInstances, perf.percent_of_max_concurrent_instances, gauge]
+      - [PercentOfMaxConcurrentSessions, perf.percent_of_max_concurrent_sessions, gauge]
+    tag_by: Name
